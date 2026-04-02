@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elvis Huayna Rivera | Cybersecurity Engineer & SOC Specialist</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio profesional de Elvis Huayna Rivera - Ingeniero de Ciberseguridad especializado en Blue Team, análisis forense y operaciones SOC. Arequipa, Perú.">
+    <meta name="keywords" content="ciberseguridad, Blue Team, SOC, Wireshark, análisis forense, detección de amenazas, seguridad defensiva, Peru, Arequipa">
+    <meta name="author" content="Elvis Huayna Rivera">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / LinkedIn Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.linkedin.com/in/elvis-alberto-huayna-rivera-84906a37b/">
+    <meta property="og:title" content="Elvis Huayna Rivera | Cybersecurity Engineer">
+    <meta property="og:description" content="Ingeniero de Ciberseguridad especializado en Blue Team, análisis forense y operaciones SOC.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Elvis Huayna Rivera | Cybersecurity Engineer">
+    <meta name="twitter:description" content="Portfolio profesional - Blue Team & SOC Specialist">
+
+    <!-- Favicon SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23050505' width='100' height='100' rx='15'/%3E%3Cpath fill='%2300bfff' d='M50 15 L85 35 L85 65 L50 85 L15 65 L15 35 Z' opacity='0.9'/%3E%3Cpath fill='%23050505' d='M50 25 L75 40 L75 60 L50 75 L25 60 L25 40 Z'/%3E%3Ccircle fill='%2300bfff' cx='50' cy='50' r='8'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts: Inter (technical) + Poppins (headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            black: '#050505',
+                            card: '#0c0c0c',
+                            border: '#1a1a1a',
+                            cyan: '#00bfff',
+                            green: '#00ff7f',
+                            dim: '#00bfff33'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ============================================
+           CUSTOM CYBER STYLES
+           ============================================ */
+
+        /* Base */
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+        body {
+            background-color: #050505;
+            color: #e5e5e5;
+            font-family: 'Inter', system-ui, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Grid Background Pattern */
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(0, 191, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 191, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* Glassmorphism Navigation */
+        .glass-nav {
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 191, 255, 0.1);
+        }
+
+        /* Cyber Card */
+        .cyber-card {
+            background: #0c0c0c;
+            border: 1px solid #1a1a1a;
+            transition: all 0.3s ease;
+        }
+
+        .cyber-card:hover {
+            border-color: rgba(0, 191, 255, 0.4);
+            box-shadow: 0 0 30px rgba(0, 191, 255, 0.1),
+                        inset 0 0 30px rgba(0, 191, 255, 0.02);
+            transform: translateY(-4px);
+        }
+
+        /* Neon Glow Text */
+        .neon-text {
+            text-shadow: 0 0 10px rgba(0, 191, 255, 0.5),
+                         0 0 20px rgba(0, 191, 255, 0.3),
+                         0 0 40px rgba(0, 191, 255, 0.2);
+        }
+
+        .neon-green {
+            color: #00ff7f;
+            text-shadow: 0 0 10px rgba(0, 255, 127, 0.5),
+                         0 0 20px rgba(0, 255, 127, 0.3);
+        }
+
+        /* Typing Cursor */
+        .cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+            color: #00bfff;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Status Pulse */
+        .status-pulse {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 5px #00ff7f, 0 0 10px #00ff7f; }
+            50% { box-shadow: 0 0 10px #00ff7f, 0 0 20px #00ff7f, 0 0 30px #00ff7f; }
+        }
+
+        /* Skill Bar Animation */
+        .skill-fill {
+            transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger children */
+        .reveal-stagger > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-stagger.active > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+        .reveal-stagger.active > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+        .reveal-stagger.active > *:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+        .reveal-stagger.active > *:nth-child(4) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+
+        /* QR Glow Effect */
+        .qr-glow:hover {
+            box-shadow: 0 0 40px rgba(0, 191, 255, 0.3);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #1a1a1a; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00bfff; }
+
+        /* Focus States */
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+            outline: 2px solid #00bfff;
+            outline-offset: 2px;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        .mobile-menu.open { transform: translateX(0); }
+
+        /* Nav Link Underline */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00bfff;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        /* Image Placeholder Gradient */
+        .avatar-placeholder {
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 50%, #0c0c0c 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .avatar-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(0, 191, 255, 0.02) 10px,
+                    rgba(0, 191, 255, 0.02) 20px
+                );
+        }
+    </style>
+</head>
+
+<body class="bg-cyber-black min-h-screen">
+
+    <!-- ==========================================
+         NAVIGATION (Glassmorphism)
+         ========================================== -->
+    <nav class="glass-nav fixed top-0 left-0 right-0 z-50 h-16" role="navigation" aria-label="Navegación principal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#hero" class="font-heading font-bold text-xl text-white flex items-center gap-2">
+                <span class="text-cyber-cyan">[</span>
+                <span class="text-white">EHR</span>
+                <span class="text-cyber-cyan">]</span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#status" class="nav-link text-sm text-gray-400 hover:text-cyber-cyan transition-colors">Status</a>
+                <a href="#projects" class="nav-link text-sm text-gray-400 hover:text-cyber-cyan transition-colors">Labs</a>
+                <a href="#skills" class="nav-link text-sm text-gray-400 hover:text-cyber-cyan transition-colors">Skills</a>
+                <a href="#timeline" class="nav-link text-sm text-gray-400 hover:text-cyber-cyan transition-colors">Intel</a>
+                <a href="#contact" class="nav-link text-sm text-gray-400 hover:text-cyber-cyan transition-colors">Contact</a>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="#contact"
+               class="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-cyber-cyan/10 border border-cyber-cyan/30 text-cyber-cyan text-sm font-medium rounded-lg hover:bg-cyber-cyan/20 transition-all">
+                <i class="fas fa-shield-halved"></i>
+                Connect
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menuToggle" class="md:hidden text-white p-2" aria-label="Abrir menú" aria-expanded="false">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobileMenu" class="mobile-menu fixed top-16 right-0 bottom-0 w-64 bg-cyber-black/98 border-l border-cyber-border md:hidden">
+            <div class="flex flex-col p-6 gap-4">
+                <a href="#status" class="text-gray-400 hover:text-cyber-cyan transition-colors py-2 border-b border-cyber-border">Status</a>
+                <a href="#projects" class="text-gray-400 hover:text-cyber-cyan transition-colors py-2 border-b border-cyber-border">Labs</a>
+                <a href="#skills" class="text-gray-400 hover:text-cyber-cyan transition-colors py-2 border-b border-cyber-border">Skills</a>
+                <a href="#timeline" class="text-gray-400 hover:text-cyber-cyan transition-colors py-2 border-b border-cyber-border">Intel</a>
+                <a href="#contact" class="text-gray-400 hover:text-cyber-cyan transition-colors py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ==========================================
+             HERO SECTION (Command Center)
+             ========================================== -->
+        <section id="hero" class="relative min-h-screen flex items-center justify-center grid-pattern overflow-hidden">
+            <!-- Radial Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-cyber-black/50 to-cyber-black pointer-events-none"></div>
+
+            <!-- Content -->
+            <div class="relative z-10 max-w-4xl mx-auto px-4 text-center pt-20">
+                <!-- Avatar Placeholder -->
+            <div class="mb-8 reveal">
+                <div class="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto">
+                <div class="absolute inset-0 rounded-full border-2 border-cyber-cyan animate-pulse opacity-40"></div>
+        
+                <div class="w-full h-full rounded-full border-2 border-cyber-border bg-cyber-card flex items-center justify-center overflow-hidden relative z-10 shadow-[0_0_20px_rgba(0,191,255,0.1)]">
+                <img src="foto2.png" 
+                    alt="Elvis Huayna Rivera" 
+                    class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 hover:scale-110">
+                </div>
+                </div>
+            </div>
+
+                <!-- Greeting -->
+                <div class="reveal mb-4">
+                    <span class="inline-block px-3 py-1 bg-cyber-cyan/10 border border-cyber-cyan/20 rounded-full text-cyber-cyan text-xs font-medium tracking-wider">
+                        <i class="fas fa-terminal mr-1"></i> SYSTEM INITIALIZED
+                    </span>
+                </div>
+
+                <!-- Name with Typing Effect -->
+                <h1 class="reveal font-heading font-bold text-4xl sm:text-5xl md:text-6xl text-white mb-4 tracking-tight">
+                    <span id="typedName" class="cursor"></span>
+                </h1>
+
+                <!-- Title -->
+                <h2 class="reveal font-sans font-medium text-lg sm:text-xl md:text-2xl text-cyber-cyan mb-6 tracking-wide">
+                    Cybersecurity Engineer | Blue Team & SOC Specialist
+                </h2>
+
+                <!-- Tagline -->
+                <p class="reveal text-gray-400 max-w-2xl mx-auto text-base sm:text-lg mb-10 leading-relaxed">
+                    Estudiante de Ingeniería en Ciberseguridad con pasión por la seguridad defensiva,
+                    análisis de incidentes y protección de infraestructuras críticas.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="reveal flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://www.linkedin.com/in/elvis-alberto-huayna-rivera-84906a37b/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-cyber-cyan text-cyber-black font-semibold rounded-lg hover:bg-opacity-90 transition-all hover:shadow-lg hover:shadow-cyber-cyan/20">
+                        <i class="fab fa-linkedin text-xl"></i>
+                        LinkedIn Profile
+                    </a>
+                    <a href="#contact"
+                       class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent border border-cyber-border text-white font-semibold rounded-lg hover:border-cyber-cyan hover:text-cyber-cyan transition-all">
+                        <i class="fas fa-envelope text-xl"></i>
+                        Secure Contact
+                    </a>
+                </div>
+
+                <!-- Scroll Indicator -->
+                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 reveal">
+                    <div class="flex flex-col items-center gap-2 text-gray-500">
+                        <span class="text-xs uppercase tracking-widest">Scroll</span>
+                        <i class="fas fa-chevron-down animate-bounce"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             STATUS BAR
+             ========================================== -->
+        <section id="status" class="bg-cyber-card border-y border-cyber-border py-4">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex flex-wrap justify-center md:justify-between items-center gap-4 text-sm">
+                    <!-- Status -->
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-2 w-2">
+                            <span class="status-pulse absolute inline-flex h-full w-full rounded-full bg-cyber-green opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyber-green"></span>
+                        </span>
+                        <span class="text-white">STATUS: <span class="text-cyber-green font-medium">ACTIVE</span></span>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="flex items-center gap-2 text-gray-400">
+                        <i class="fas fa-map-marker-alt text-cyber-cyan"></i>
+                        <span>LOCATION: <span class="text-white font-medium">AREQUIPA, PE</span></span>
+                    </div>
+
+                    <!-- Level -->
+                    <div class="flex items-center gap-2 text-gray-400">
+                        <i class="fas fa-graduation-cap text-cyber-cyan"></i>
+                        <span>LEVEL: <span class="text-white font-medium">5TH SEMESTER</span></span>
+                    </div>
+
+                    <!-- Uptime -->
+                    <div class="flex items-center gap-2 text-gray-400">
+                        <i class="fas fa-clock text-cyber-cyan"></i>
+                        <span>UPTIME: <span class="text-white font-medium">24/7</span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             PROJECTS (The Labs)
+             ========================================== -->
+        <section id="projects" class="py-20 md:py-28">
+            <div class="max-w-7xl mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-16 reveal">
+                    <span class="inline-block px-3 py-1 bg-cyber-cyan/10 border border-cyber-cyan/20 rounded-full text-cyber-cyan text-xs font-medium tracking-wider mb-4">
+                        <i class="fas fa-flask mr-1"></i> PROJECT LABS
+                    </span>
+                    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white mb-4">Laboratorios & Proyectos</h2>
+                    <p class="text-gray-400 max-w-xl mx-auto">Proyectos prácticos enfocados en seguridad defensiva, automatización y análisis forense.</p>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">
+                    <!-- Project 1: JARVIS AI -->
+                    <article class="cyber-card rounded-xl p-6 group">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-14 h-14 bg-cyber-cyan/10 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-robot text-cyber-cyan text-2xl"></i>
+                            </div>
+                            <span class="px-2 py-1 bg-cyber-green/10 border border-cyber-green/30 rounded text-cyber-green text-xs font-medium">
+                                AI
+                            </span>
+                        </div>
+                        <h3 class="font-heading font-semibold text-xl text-white mb-3 group-hover:text-cyber-cyan transition-colors">
+                            JARVIS AI Assistant
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            Asistente virtual con IA local usando Ollama. Arquitectura modular con integración
+                            backend para automatización de tareas y análisis de datos.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-800 rounded text-xs text-gray-300">Python</span>
+                            <span class="px-2 py-1 bg-gray-800 rounded text-xs text-gray-300">Ollama</span>
+                            <span class="px-2 py-1 bg-gray-800 rounded text-xs text-gray-300">API REST</span>
+                            <span class="px-2 py-1 bg-gray-800 rounded text-xs text-gray-300">LangChain</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-cyber-cyan text-sm font-medium">
+                            <span>Ver proyecto</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: AAA/RADIUS -->
+                    <article class="cyber-card rounded-xl p-6 group">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-14 h-14 bg-cyber-cyan/10 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-key text-cyber-cyan text-2xl"></i>
+                            </div>
+                            <span class="px-2 py-1 bg-cyber-cyan/10 border border-cyber-cyan/30 rounded text-cyber-cyan text-xs font-medium">
+                                NETWORK
+                            </span>
+                        </div>
+                        <h3 class="font-heading font-semibold text-xl text-white mb-3 group-hover:text-cyber-cyan transition-colors">
+                            AAA/RADIUS Implementation
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            Implementación de sistema de autenticación, autorización y contabilidad (AAA)
+                            con FreeRADIUS para gestión centralizada de acceso a red.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-800 rounded text-xs text-gray-300">FreeRADIUS</span>
+                            <span class="px-2 py-1 bg-gray-800 rounded text-xs text-gray-300">LDAP</span>
+                            <span class="px-2 py-1 bg-gray-800 rounded text-xs text-gray-300">Network Security</span>
+                            <span class="px-2 py-1 bg-gray-800 rounded text-xs text-gray-300">802.1X</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-cyber-cyan text-sm font-medium">
+                            <span>Ver proyecto</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Blue Team Forensics -->
+                    <article class="cyber-card rounded-xl p-6 group">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-14 h-14 bg-cyber-cyan/10 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-shield-halved text-cyber-cyan text-2xl"></i>
+                            </div>
+                            <span class="px-2 py-1 bg-cyber-green/10 border border-cyber-green/30 rounded text-cyber-green text-xs font-medium">
+                                BLUE TEAM
+                            </span>
+                        </div>
+                        <h3 class="font-heading font-semibold text-xl text-white mb-3 group-hover:text-cyber-cyan transition-colors">
+                            Blue Team Forensics Lab
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            Laboratorio forense digital con análisis de malware, reverse engineering
+                            y detección de amenazas en plataformas como TryHackMe y Let's Defend.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-800 rounded text-xs text-gray-300">DFIR</span>
+                            <span class="px-2 py-1 bg-gray-800 rounded text-xs text-gray-300">Wireshark</span>
+                            <span class="px-2 py-1 bg-gray-800 rounded text-xs text-gray-300">SIEM</span>
+                            <span class="px-2 py-1 bg-gray-800 rounded text-xs text-gray-300">EDR</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-cyber-cyan text-sm font-medium">
+                            <span>Ver laboratorio</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             TECHNICAL SKILLS
+             ========================================== -->
+        <section id="skills" class="py-20 md:py-28 bg-cyber-card/50">
+            <div class="max-w-7xl mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-16 reveal">
+                    <span class="inline-block px-3 py-1 bg-cyber-cyan/10 border border-cyber-cyan/20 rounded-full text-cyber-cyan text-xs font-medium tracking-wider mb-4">
+                        <i class="fas fa-code-branch mr-1"></i> TECHNICAL MATRIX
+                    </span>
+                    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white mb-4">Habilidades Técnicas</h2>
+                    <p class="text-gray-400 max-w-xl mx-auto">Stack tecnológico y herramientas de ciberseguridad.</p>
+                </div>
+
+                <!-- Skills Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">
+                    <!-- Skill 1: Networking -->
+                    <div class="cyber-card rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-cyber-cyan/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-network-wired text-cyber-cyan"></i>
+                                </div>
+                                <span class="font-medium text-white">Redes</span>
+                            </div>
+                            <span class="text-cyber-cyan font-mono text-sm font-medium">95%</span>
+                        </div>
+                        <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                            <div class="skill-fill h-full bg-gradient-to-r from-cyber-cyan to-cyber-green rounded-full" data-width="95"></div>
+                        </div>
+                        <p class="text-gray-500 text-xs mt-2">TCP/IP, DNS, DHCP, VLAN, OSPF</p>
+                    </div>
+
+                    <!-- Skill 2: Wireshark -->
+                    <div class="cyber-card rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-cyber-cyan/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-search text-cyber-cyan"></i>
+                                </div>
+                                <span class="font-medium text-white">Wireshark</span>
+                            </div>
+                            <span class="text-cyber-cyan font-mono text-sm font-medium">90%</span>
+                        </div>
+                        <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                            <div class="skill-fill h-full bg-gradient-to-r from-cyber-cyan to-cyber-green rounded-full" data-width="90"></div>
+                        </div>
+                        <p class="text-gray-500 text-xs mt-2">Packet Analysis, Protocol Analysis</p>
+                    </div>
+
+                    <!-- Skill 3: Python -->
+                    <div class="cyber-card rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-cyber-cyan/10 rounded-lg flex items-center justify-center">
+                                    <i class="fab fa-python text-cyber-cyan"></i>
+                                </div>
+                                <span class="font-medium text-white">Python</span>
+                            </div>
+                            <span class="text-cyber-cyan font-mono text-sm font-medium">80%</span>
+                        </div>
+                        <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                            <div class="skill-fill h-full bg-gradient-to-r from-cyber-cyan to-cyber-green rounded-full" data-width="80"></div>
+                        </div>
+                        <p class="text-gray-500 text-xs mt-2">Scripting, Automation, Security Tools</p>
+                    </div>
+
+                    <!-- Skill 4: SIEM/EDR -->
+                    <div class="cyber-card rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-cyber-cyan/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-server text-cyber-cyan"></i>
+                                </div>
+                                <span class="font-medium text-white">SIEM / EDR</span>
+                            </div>
+                            <span class="text-cyber-cyan font-mono text-sm font-medium">75%</span>
+                        </div>
+                        <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                            <div class="skill-fill h-full bg-gradient-to-r from-cyber-cyan to-cyber-green rounded-full" data-width="75"></div>
+                        </div>
+                        <p class="text-gray-500 text-xs mt-2">Log Analysis, Threat Detection</p>
+                    </div>
+
+                    <!-- Skill 5: Packet Tracer -->
+                    <div class="cyber-card rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-cyber-cyan/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-project-diagram text-cyber-cyan"></i>
+                                </div>
+                                <span class="font-medium text-white">Packet Tracer</span>
+                            </div>
+                            <span class="text-cyber-cyan font-mono text-sm font-medium">85%</span>
+                        </div>
+                        <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                            <div class="skill-fill h-full bg-gradient-to-r from-cyber-cyan to-cyber-green rounded-full" data-width="85"></div>
+                        </div>
+                        <p class="text-gray-500 text-xs mt-2">Network Simulation, VLAN, OSPF</p>
+                    </div>
+
+                    <!-- Skill 6: SQL -->
+                    <div class="cyber-card rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-cyber-cyan/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-database text-cyber-cyan"></i>
+                                </div>
+                                <span class="font-medium text-white">SQL</span>
+                            </div>
+                            <span class="text-cyber-cyan font-mono text-sm font-medium">70%</span>
+                        </div>
+                        <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                            <div class="skill-fill h-full bg-gradient-to-r from-cyber-cyan to-cyber-green rounded-full" data-width="70"></div>
+                        </div>
+                        <p class="text-gray-500 text-xs mt-2">Database Security, Queries</p>
+                    </div>
+
+                    <!-- Skill 7: Cloud (AWS/Azure) -->
+                    <div class="cyber-card rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-cyber-cyan/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-cloud text-cyber-cyan"></i>
+                                </div>
+                                <span class="font-medium text-white">Cloud (AWS/Azure)</span>
+                            </div>
+                            <span class="text-cyber-cyan font-mono text-sm font-medium">60%</span>
+                        </div>
+                        <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                            <div class="skill-fill h-full bg-gradient-to-r from-cyber-cyan to-cyber-green rounded-full" data-width="60"></div>
+                        </div>
+                        <p class="text-gray-500 text-xs mt-2">Cloud Security Fundamentals</p>
+                    </div>
+
+                    <!-- Skill 8: Ethical Hacking -->
+                    <div class="cyber-card rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-cyber-cyan/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-bug text-cyber-cyan"></i>
+                                </div>
+                                <span class="font-medium text-white">Ethical Hacking</span>
+                            </div>
+                            <span class="text-cyber-cyan font-mono text-sm font-medium">65%</span>
+                        </div>
+                        <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                            <div class="skill-fill h-full bg-gradient-to-r from-cyber-cyan to-cyber-green rounded-full" data-width="65"></div>
+                        </div>
+                        <p class="text-gray-500 text-xs mt-2">Penetration Testing Basics</p>
+                    </div>
+
+                    <!-- Skill 9: Blue Team -->
+                    <div class="cyber-card rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-cyber-green/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-shield-virus text-cyber-green"></i>
+                                </div>
+                                <span class="font-medium text-white">Blue Team</span>
+                            </div>
+                            <span class="text-cyber-green font-mono text-sm font-medium">78%</span>
+                        </div>
+                        <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                            <div class="skill-fill h-full bg-gradient-to-r from-cyber-green to-cyber-cyan rounded-full" data-width="78"></div>
+                        </div>
+                        <p class="text-gray-500 text-xs mt-2">Threat Detection, Incident Response</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             TIMELINE (Intelligence History)
+             ========================================== -->
+        <section id="timeline" class="py-20 md:py-28">
+            <div class="max-w-7xl mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-16 reveal">
+                    <span class="inline-block px-3 py-1 bg-cyber-cyan/10 border border-cyber-cyan/20 rounded-full text-cyber-cyan text-xs font-medium tracking-wider mb-4">
+                        <i class="fas fa-history mr-1"></i> INTELLIGENCE HISTORY
+                    </span>
+                    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white mb-4">Línea de Tiempo</h2>
+                    <p class="text-gray-400 max-w-xl mx-auto">Educación y experiencia profesional en ciberseguridad.</p>
+                </div>
+
+                <div class="max-w-3xl mx-auto">
+                    <!-- Timeline -->
+                    <div class="relative">
+                        <!-- Vertical Line -->
+                        <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-cyber-cyan via-cyber-green to-cyber-border"></div>
+
+                        <!-- Timeline Items -->
+                        <div class="space-y-12">
+                            <!-- Item 1: SENATI (Education) -->
+                            <div class="reveal relative flex flex-col md:flex-row gap-8 md:gap-0">
+                                <div class="md:w-1/2 md:pr-12 md:text-right">
+                                    <div class="cyber-card rounded-xl p-6 inline-block text-left md:text-right">
+                                        <span class="text-cyber-cyan text-xs font-mono">2024 - 2026</span>
+                                        <h3 class="font-heading font-semibold text-lg text-white mt-1">Ingeniería en Ciberseguridad</h3>
+                                        <p class="text-cyber-green text-sm font-medium mt-1">
+                                            <i class="fas fa-graduation-cap mr-1"></i> SENATI
+                                        </p>
+                                        <p class="text-gray-400 text-sm mt-2">Quinto semestre. Formación en seguridad ofensiva y defensiva, análisis de amenazas y arquitectura de redes seguras.</p>
+                                    </div>
+                                </div>
+                                <div class="absolute left-0 md:left-1/2 top-8 transform -translate-x-1/2 w-4 h-4 rounded-full bg-cyber-cyan border-4 border-cyber-black shadow-lg shadow-cyber-cyan/30"></div>
+                                <div class="md:w-1/2 md:pl-12"></div>
+                            </div>
+
+                            <!-- Item 2: CEPROTEC -->
+                            <div class="reveal relative flex flex-col md:flex-row gap-8 md:gap-0">
+                                <div class="md:w-1/2 md:pr-12"></div>
+                                <div class="absolute left-0 md:left-1/2 top-8 transform -translate-x-1/2 w-4 h-4 rounded-full bg-cyber-border border-4 border-cyber-black"></div>
+                                <div class="md:w-1/2 md:pl-12">
+                                    <div class="cyber-card rounded-xl p-6 inline-block text-left">
+                                        <span class="text-cyber-cyan text-xs font-mono">2018</span>
+                                        <h3 class="font-heading font-semibold text-lg text-white mt-1">Formación Técnica en Informática</h3>
+                                        <p class="text-cyber-green text-sm font-medium mt-1">
+                                            <i class="fas fa-certificate mr-1"></i> CEPROTEC Arequipa
+                                        </p>
+                                        <p class="text-gray-400 text-sm mt-2">Desarrollo de competencias en sistemas, redes y soporte técnico.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 3: CETPRO -->
+                            <div class="reveal relative flex flex-col md:flex-row gap-8 md:gap-0">
+                                <div class="md:w-1/2 md:pr-12 md:text-right">
+                                    <div class="cyber-card rounded-xl p-6 inline-block text-left md:text-right">
+                                        <span class="text-cyber-cyan text-xs font-mono">2021</span>
+                                        <h3 class="font-heading font-semibold text-lg text-white mt-1">Mantenimiento y Ensamblaje</h3>
+                                        <p class="text-cyber-green text-sm font-medium mt-1">
+                                            <i class="fas fa-tools mr-1"></i> CETPRO Zepita
+                                        </p>
+                                        <p class="text-gray-400 text-sm mt-2">Formación práctica en hardware, diagnóstico de fallas y ensamblaje de computadoras.</p>
+                                    </div>
+                                </div>
+                                <div class="absolute left-0 md:left-1/2 top-8 transform -translate-x-1/2 w-4 h-4 rounded-full bg-cyber-border border-4 border-cyber-black"></div>
+                                <div class="md:w-1/2 md:pl-12"></div>
+                            </div>
+
+                            <!-- Item 4: Freelance -->
+                            <div class="reveal relative flex flex-col md:flex-row gap-8 md:gap-0">
+                                <div class="md:w-1/2 md:pr-12"></div>
+                                <div class="absolute left-0 md:left-1/2 top-8 transform -translate-x-1/2 w-4 h-4 rounded-full bg-cyber-green border-4 border-cyber-black shadow-lg shadow-cyber-green/30"></div>
+                                <div class="md:w-1/2 md:pl-12">
+                                    <div class="cyber-card rounded-xl p-6 inline-block text-left border-cyber-green/20">
+                                        <span class="text-cyber-green text-xs font-mono">2024 - PRESENTE</span>
+                                        <h3 class="font-heading font-semibold text-lg text-white mt-1">Técnico de Computadoras Freelance</h3>
+                                        <p class="text-gray-300 text-sm mt-2">Mantenimiento, reparación, instalación de sistemas, optimización y recuperación de datos.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 5: Soporte TI -->
+                            <div class="reveal relative flex flex-col md:flex-row gap-8 md:gap-0">
+                                <div class="md:w-1/2 md:pr-12 md:text-right">
+                                    <div class="cyber-card rounded-xl p-6 inline-block text-left md:text-right">
+                                        <span class="text-cyber-cyan text-xs font-mono">2025 - 2026</span>
+                                        <h3 class="font-heading font-semibold text-lg text-white mt-1">Soporte TI</h3>
+                                        <p class="text-cyber-green text-sm font-medium mt-1">
+                                            <i class="fas fa-building mr-1"></i> GUE La Gran Unidad Mariano Melgar - Arequipa
+                                         </p>
+                                        <p class="text-gray-400 text-sm mt-2">Diagnóstico técnico, configuración de redes básicas, resolución de incidencias.</p>
+                                    </div>
+                                </div>
+                                <div class="absolute left-0 md:left-1/2 top-8 transform -translate-x-1/2 w-4 h-4 rounded-full bg-cyber-border border-4 border-cyber-black"></div>
+                                <div class="md:w-1/2 md:pl-12"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECURE CONTACT
+             ========================================== -->
+        <section id="contact" class="py-20 md:py-28 bg-cyber-card/50">
+            <div class="max-w-7xl mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-16 reveal">
+                    <span class="inline-block px-3 py-1 bg-cyber-cyan/10 border border-cyber-cyan/20 rounded-full text-cyber-cyan text-xs font-medium tracking-wider mb-4">
+                        <i class="fas fa-lock mr-1"></i> SECURE CHANNEL
+                    </span>
+                    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white mb-4">Contacto Seguro</h2>
+                    <p class="text-gray-400 max-w-xl mx-auto">Conectemos. Canales de comunicación directos y código QR para LinkedIn.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <!-- Contact Info -->
+                    <div class="reveal">
+                        <h3 class="font-heading font-semibold text-xl text-white mb-6">Información de Contacto</h3>
+
+                        <div class="space-y-4 mb-8">
+                            <!-- Phone -->
+                            <a href="tel:+51942246555"
+                               class="cyber-card flex items-center gap-4 p-4 rounded-xl hover:border-cyber-cyan transition-colors group">
+                                <div class="w-12 h-12 bg-cyber-cyan/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-phone text-cyber-cyan text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <span class="text-gray-400 text-sm">Teléfono</span>
+                                    <p class="text-white font-medium">+51 942 246 555</p>
+                                </div>
+                                <i class="fas fa-copy text-gray-500 group-hover:text-cyber-cyan transition-colors"></i>
+                            </a>
+
+                            <!-- Email -->
+                            <a href="mailto:huaynriveraelvis@gmail.com"
+                               class="cyber-card flex items-center gap-4 p-4 rounded-xl hover:border-cyber-cyan transition-colors group">
+                                <div class="w-12 h-12 bg-cyber-cyan/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-envelope text-cyber-cyan text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <span class="text-gray-400 text-sm">Email</span>
+                                    <p class="text-white font-medium text-sm">huaynriveraelvis@gmail.com</p>
+                                </div>
+                                <i class="fas fa-copy text-gray-500 group-hover:text-cyber-cyan transition-colors"></i>
+                            </a>
+
+                            <!-- Location -->
+                            <div class="cyber-card flex items-center gap-4 p-4 rounded-xl">
+                                <div class="w-12 h-12 bg-cyber-cyan/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-cyber-cyan text-lg"></i>
+                                </div>
+                                <div>
+                                    <span class="text-gray-400 text-sm">Ubicación</span>
+                                    <p class="text-white font-medium">Arequipa, Perú</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LinkedIn Button -->
+                        <a href="https://www.linkedin.com/in/elvis-alberto-huayna-rivera-84906a37b/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="inline-flex items-center gap-3 w-full justify-center px-6 py-4 bg-linkedin text-white font-semibold rounded-xl hover:bg-opacity-90 transition-all">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                            Ver Perfil LinkedIn
+                        </a>
+                    </div>
+
+                    <!-- QR Code Section -->
+                    <div class="reveal">
+                        <h3 class="font-heading font-semibold text-xl text-white mb-6 text-center lg:text-left">LinkedIn QR Code</h3>
+
+                        <div class="cyber-card rounded-2xl p-8 text-center qr-glow transition-all">
+                            <div class="mb-4">
+                                <i class="fab fa-linkedin text-4xl text-cyber-cyan mb-2"></i>
+                                <p class="text-gray-400 text-sm">Escanea para conectar directamente</p>
+                            </div>
+
+                            <!-- QR Code Container -->
+                            <div class="bg-white p-4 rounded-xl inline-block mb-4">
+                                <div id="qrCode" class="w-48 h-48 mx-auto"></div>
+                            </div>
+
+                            <p class="text-gray-500 text-xs">
+                                <i class="fas fa-shield-halved mr-1"></i>
+                                Código QR seguro - Enlace verificado
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="bg-cyber-black border-t border-cyber-border py-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-2">
+                    <span class="font-heading font-bold text-lg text-white">
+                        <span class="text-cyber-cyan">[</span>EHR<span class="text-cyber-cyan">]</span>
+                    </span>
+                    <span class="text-gray-500 text-sm">|</span>
+                    <span class="text-gray-400 text-sm">Cybersecurity Engineer</span>
+                </div>
+
+                <div class="flex items-center gap-6 text-sm text-gray-500">
+                    <a href="#hero" class="hover:text-cyber-cyan transition-colors">Home</a>
+                    <a href="#projects" class="hover:text-cyber-cyan transition-colors">Labs</a>
+                    <a href="#contact" class="hover:text-cyber-cyan transition-colors">Contact</a>
+                </div>
+
+                <p class="text-gray-500 text-sm">
+                    &copy; 2024 Elvis Huayna Rivera. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+        <div class="cyber-card flex items-center gap-3 px-5 py-3 rounded-xl border-cyber-cyan/30">
+            <i class="fas fa-check-circle text-cyber-green text-lg"></i>
+            <span id="toastMessage" class="text-white text-sm">Copiado al portapapeles</span>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         JAVASCRIPT
+         ========================================== -->
+    <script>
+        /**
+         * =============================================
+         * CYBERSECURITY PORTFOLIO - Main Application
+         * Version: 1.0.0
+         * Author: Elvis Huayna Rivera
+         * =============================================
+         */
+
+        (function() {
+            'use strict';
+
+            // =============================================
+            // Configuration
+            // =============================================
+            const CONFIG = {
+                linkedInUrl: 'https://www.linkedin.com/in/elvis-alberto-huayna-rivera-84906a37b/',
+                phoneNumber: '+51942246555',
+                emailAddress: 'huaynriveraelvis@gmail.com',
+                typingSpeed: 100,
+                deletingSpeed: 50,
+                pauseDuration: 2000
+            };
+
+            // =============================================
+            // DOM Elements
+            // =============================================
+            const elements = {
+                typedName: document.getElementById('typedName'),
+                menuToggle: document.getElementById('menuToggle'),
+                mobileMenu: document.getElementById('mobileMenu'),
+                qrCode: document.getElementById('qrCode'),
+                toast: document.getElementById('toast'),
+                toastMessage: document.getElementById('toastMessage'),
+                skillFills: document.querySelectorAll('.skill-fill'),
+                revealElements: document.querySelectorAll('.reveal'),
+                revealStaggerElements: document.querySelectorAll('.reveal-stagger'),
+                navLinks: document.querySelectorAll('.nav-link')
+            };
+
+            // =============================================
+            // Typing Effect
+            // =============================================
+            class TypeWriter {
+                constructor(element, text, speed, deleteSpeed, pauseDuration) {
+                    this.element = element;
+                    this.text = text;
+                    this.speed = speed;
+                    this.deleteSpeed = deleteSpeed;
+                    this.pauseDuration = pauseDuration;
+                    this.currentIndex = 0;
+                    this.isDeleting = false;
+                }
+
+                type() {
+                    const isComplete = !this.isDeleting && this.currentIndex === this.text.length;
+                    const shouldDelete = this.isDeleting && this.currentIndex === 0;
+
+                    if (shouldDelete) {
+                        this.isDeleting = false;
+                        setTimeout(() => this.type(), this.pauseDuration);
+                        return;
+                    }
+
+                    if (isComplete) {
+                        this.element.classList.remove('cursor');
+                        setTimeout(() => {
+                            this.isDeleting = true;
+                            this.element.classList.add('cursor');
+                            this.type();
+                        }, this.pauseDuration);
+                        return;
+                    }
+
+                    const currentText = this.text.substring(0, this.currentIndex + 1);
+                    this.element.textContent = currentText;
+
+                    if (this.isDeleting) {
+                        this.currentIndex--;
+                    } else {
+                        this.currentIndex++;
+                    }
+
+                    const randomSpeed = this.isDeleting
+                        ? this.deleteSpeed + Math.random() * 30
+                        : this.speed + Math.random() * 50;
+
+                    setTimeout(() => this.type(), randomSpeed);
+                }
+
+                start() {
+                    this.element.classList.add('cursor');
+                    this.type();
+                }
+            }
+
+            // =============================================
+            // Intersection Observer - Scroll Reveal
+            // =============================================
+            function initScrollReveal() {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.15
+                };
+
+                const revealCallback = (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+
+                            // Animate skill bars if present
+                            if (entry.target.classList.contains('reveal-stagger')) {
+                                const skillFills = entry.target.querySelectorAll('.skill-fill');
+                                skillFills.forEach((bar, index) => {
+                                    setTimeout(() => {
+                                        const width = bar.getAttribute('data-width');
+                                        bar.style.width = `${width}%`;
+                                    }, index * 100);
+                                });
+                            }
+
+                            // Unobserve after animation
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                };
+
+                const observer = new IntersectionObserver(revealCallback, observerOptions);
+
+                elements.revealElements.forEach(el => observer.observe(el));
+                elements.revealStaggerElements.forEach(el => observer.observe(el));
+            }
+
+            // =============================================
+            // Skill Bar Animation
+            // =============================================
+            function initSkillBars() {
+                const observerOptions = {
+                    root: null,
+                    threshold: 0.3
+                };
+
+                const skillCallback = (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const width = entry.target.getAttribute('data-width');
+                            setTimeout(() => {
+                                entry.target.style.width = `${width}%`;
+                            }, 200);
+                            skillObserver.unobserve(entry.target);
+                        }
+                    });
+                };
+
+                const skillObserver = new IntersectionObserver(skillCallback, observerOptions);
+
+                elements.skillFills.forEach(bar => skillObserver.observe(bar));
+            }
+
+            // =============================================
+            // QR Code Generation
+            // =============================================
+            function initQRCode() {
+                if (typeof QRCode !== 'undefined' && elements.qrCode) {
+                    try {
+                        elements.qrCode.innerHTML = '';
+
+                        new QRCode(elements.qrCode, {
+                            text: CONFIG.linkedInUrl,
+                            width: 180,
+                            height: 180,
+                            colorDark: '#050505',
+                            colorLight: '#ffffff',
+                            correctLevel: QRCode.CorrectLevel.M
+                        });
+                    } catch (error) {
+                        console.warn('QR Code generation failed:', error);
+                        elements.qrCode.innerHTML = `
+                            <div class="text-center p-4">
+                                <a href="${CONFIG.linkedInUrl}"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="text-cyber-cyan hover:underline">
+                                    Abrir LinkedIn
+                                </a>
+                            </div>
+                        `;
+                    }
+                }
+            }
+
+            // =============================================
+            // Mobile Menu Toggle
+            // =============================================
+            function initMobileMenu() {
+                elements.menuToggle.addEventListener('click', function() {
+                    const isOpen = elements.mobileMenu.classList.contains('open');
+                    elements.mobileMenu.classList.toggle('open');
+                    this.setAttribute('aria-expanded', !isOpen);
+
+                    // Toggle icon
+                    const icon = this.querySelector('i');
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                });
+
+                // Close menu when clicking a link
+                elements.mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        elements.mobileMenu.classList.remove('open');
+                        elements.menuToggle.querySelector('i').classList.remove('fa-times');
+                        elements.menuToggle.querySelector('i').classList.add('fa-bars');
+                    });
+                });
+            }
+
+            // =============================================
+            // Copy to Clipboard
+            // =============================================
+            function initCopyToClipboard() {
+                document.querySelectorAll('a[href^="tel"], a[href^="mailto"]').forEach(link => {
+                    link.addEventListener('click', async function(e) {
+                        const href = this.getAttribute('href');
+                        let textToCopy = '';
+
+                        if (href.startsWith('tel:')) {
+                            textToCopy = CONFIG.phoneNumber;
+                        } else if (href.startsWith('mailto:')) {
+                            textToCopy = CONFIG.emailAddress;
+                        }
+
+                        if (textToCopy) {
+                            e.preventDefault();
+                            try {
+                                await navigator.clipboard.writeText(textToCopy);
+                                showToast(`${textToCopy} copiado al portapapeles`);
+                            } catch (err) {
+                                // Fallback
+                                const textArea = document.createElement('textarea');
+                                textArea.value = textToCopy;
+                                textArea.style.position = 'fixed';
+                                textArea.style.opacity = '0';
+                                document.body.appendChild(textArea);
+                                textArea.select();
+                                document.execCommand('copy');
+                                document.body.removeChild(textArea);
+                                showToast(`${textToCopy} copiado al portapapeles`);
+                            }
+                        }
+                    });
+                });
+            }
+
+            // =============================================
+            // Toast Notification
+            // =============================================
+            function showToast(message) {
+                elements.toastMessage.textContent = message;
+                elements.toast.classList.remove('translate-y-20', 'opacity-0');
+
+                setTimeout(() => {
+                    elements.toast.classList.add('translate-y-20', 'opacity-0');
+                }, 3000);
+            }
+
+            // =============================================
+            // Active Navigation on Scroll
+            // =============================================
+            function initActiveNavigation() {
+                const sections = document.querySelectorAll('section[id]');
+
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '-20% 0px -80% 0px',
+                    threshold: 0
+                };
+
+                const sectionObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const id = entry.target.getAttribute('id');
+                            elements.navLinks.forEach(link => {
+                                const href = link.getAttribute('href');
+                                if (href === `#${id}`) {
+                                    link.classList.add('active');
+                                } else {
+                                    link.classList.remove('active');
+                                }
+                            });
+                        }
+                    });
+                }, observerOptions);
+
+                sections.forEach(section => sectionObserver.observe(section));
+            }
+
+            // =============================================
+            // Navbar Scroll Effect
+            // =============================================
+            function initNavbarScroll() {
+                const navbar = document.querySelector('.glass-nav');
+
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('shadow-lg');
+                    } else {
+                        navbar.classList.remove('shadow-lg');
+                    }
+                }, { passive: true });
+            }
+
+            // =============================================
+            // Initialize Application
+            // =============================================
+            function init() {
+                // Start typing effect for name
+                const typeWriter = new TypeWriter(
+                    elements.typedName,
+                    'Elvis Huayna Rivera',
+                    CONFIG.typingSpeed,
+                    CONFIG.deletingSpeed,
+                    CONFIG.pauseDuration
+                );
+
+                // Initialize all modules
+                initScrollReveal();
+                initSkillBars();
+                initQRCode();
+                initMobileMenu();
+                initCopyToClipboard();
+                initActiveNavigation();
+                initNavbarScroll();
+
+                // Start typing animation after a short delay
+                setTimeout(() => typeWriter.start(), 500);
+
+                // Log initialization
+                console.log(
+                    '%c🛡️ Portfolio Inicializado',
+                    'color: #00bfff; font-weight: bold; font-size: 14px;'
+                );
+            }
+
+            // Run when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+</body>
+</html>
